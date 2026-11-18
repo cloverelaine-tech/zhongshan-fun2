@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>中山如此多FUN</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFCF6;--ink:#3E3A39;--coral:#F2A497;--yellow:#F6D27A;--blue:#A8D3E6;--green:#B9DAA5;--r:26px;color-scheme:light}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(64px + env(safe-area-inset-top,0px));-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'中山如此多FUN','Huninn','Noto Sans TC','PingFang TC',sans-serif;line-height:1.6;font-size:16px;padding:calc(58px + env(safe-area-inset-top,0px)) 0 calc(24px + env(safe-area-inset-bottom,0px))}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;background:var(--paper);border-bottom:3px solid var(--ink);padding:calc(8px + env(safe-area-inset-top,0px)) 10px 8px;display:flex;gap:8px;overflow-x:auto;justify-content:center}
+nav a{flex:none;color:var(--ink);text-decoration:none;border:3px solid var(--ink);border-radius:999px;padding:2px 14px;background:var(--paper);font-size:15px}
+nav a:nth-child(1){background:var(--coral)}nav a:nth-child(2){background:var(--blue)}nav a:nth-child(3){background:var(--yellow)}nav a:nth-child(4){background:var(--green)}nav a:nth-child(5){background:var(--coral)}
+main{max-width:640px;margin:0 auto;padding:16px 14px}
+section{margin-bottom:30px}
+h2{font-size:24px;margin:0 0 12px;display:inline-block;border:3px solid var(--ink);border-radius:999px;padding:0 18px;background:var(--yellow)}
+.card{border:3px solid var(--ink);border-radius:var(--r);background:var(--paper);padding:16px;margin-bottom:14px}
+.hero{background:var(--paper);text-align:center;padding:0;overflow:hidden}
+.hero svg{display:block;width:100%;height:auto;border-bottom:3px solid var(--ink)}
+.hero .t{padding:14px 16px 18px}
+h1{margin:0;font-size:34px;letter-spacing:2px}
+.sub{margin:2px 0 12px}
+.count{display:inline-block;border:3px solid var(--ink);border-radius:var(--r);background:var(--yellow);padding:6px 22px}
+.count b{font-size:38px;color:var(--ink)}
+.trip{display:flex;gap:12px;align-items:center}
+.trip svg{flex:none;width:84px;height:54px}
+.trip .tag{display:inline-block;border:3px solid var(--ink);border-radius:999px;padding:0 12px;font-size:14px;background:var(--paper)}
+.big{font-size:22px;margin:2px 0}
+.row{font-size:15px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px}
+.tabs button{flex:none;font:inherit;color:var(--ink);border:3px solid var(--ink);border-radius:var(--r);background:var(--paper);padding:4px 14px;cursor:pointer;text-align:center;line-height:1.3}
+.tabs button.on{background:var(--yellow);transform:translateY(-2px)}
+.tabs small{display:block;font-size:12px}
+.dayt{margin:4px 2px 12px;font-size:18px}
+ol.tl{list-style:none;margin:0;padding:0 0 0 30px;position:relative}
+ol.tl::before{content:"";position:absolute;left:10px;top:8px;bottom:8px;border-left:3px dashed var(--ink)}
+.it{position:relative;margin-bottom:14px;animation:pop .5s cubic-bezier(.34,1.56,.64,1) both;animation-delay:calc(var(--i)*60ms)}
+.it::before{content:"";position:absolute;left:-30px;top:14px;width:16px;height:16px;border:3px solid var(--ink);border-radius:50%;background:var(--coral)}
+.it.must::before{background:var(--yellow)}
+.it .card{margin:0;padding:10px 14px;position:relative}
+.time{font-size:14px}
+.it h3{margin:0;font-size:18px}
+.it p{margin:2px 0 0;font-size:14px}
+.tg{display:inline-block;border:3px solid var(--ink);border-radius:999px;padding:0 10px;font-size:13px;margin-right:6px;line-height:1.5}
+.船{background:var(--blue)}.巴士{background:var(--yellow)}.步行{background:var(--green)}.的士{background:var(--coral)}
+.must-b{position:absolute;right:10px;top:-12px;background:var(--coral);border:3px solid var(--ink);border-radius:999px;padding:0 12px;font-size:14px;transform:rotate(4deg)}
+.cl{list-style:none;padding:0;margin:0}
+.cl li{margin:8px 0}
+.cl label{display:flex;gap:10px;align-items:center;cursor:pointer}
+.cl input{appearance:none;-webkit-appearance:none;flex:none;width:28px;height:28px;border:3px solid var(--ink);border-radius:10px;background:var(--paper);margin:0;display:grid;place-items:center;cursor:pointer}
+.cl input:checked{background:var(--green)}
+.cl input:checked::after{content:"✓";font-size:18px;line-height:1}
+.cl input:checked+span{text-decoration:line-through;opacity:.55}
+.prog{font-size:14px;margin:0 0 4px}
+.g{display:grid;gap:14px}
+.hotel dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:15px}
+.hotel dt{font-weight:bold}.hotel dd{margin:0}
+.foot{text-align:center;font-size:13px}
+@keyframes pop{0%{transform:scale(.85) translateY(14px);opacity:0}60%{transform:scale(1.04) translateY(-3px);opacity:1}100%{transform:none;opacity:1}}
+@keyframes bob{50%{transform:translateY(5px) rotate(-1.5deg)}}
+@keyframes drift{50%{transform:translateX(14px)}}
+@keyframes pulse{50%{transform:scale(1.08)}}
+.bob{animation:bob 3.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.drift{animation:drift 7s ease-in-out infinite}
+.drift2{animation:drift 9s ease-in-out infinite reverse}
+.sun{animation:pulse 4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+.tabs button.on{animation:pop .45s cubic-bezier(.34,1.56,.64,1)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="ferry" viewBox="0 0 84 54"><path d="M6 32H78L69 48H15Z" fill="#fff" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><rect x="20" y="17" width="40" height="15" rx="5" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/><rect x="32" y="6" width="12" height="11" rx="3" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/><circle cx="30" cy="25" r="3" fill="#3E3A39"/><circle cx="42" cy="25" r="3" fill="#3E3A39"/><circle cx="52" cy="25" r="3" fill="#3E3A39"/></symbol>
+<symbol id="bus" viewBox="0 0 84 54"><rect x="5" y="10" width="74" height="32" rx="10" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/><rect x="12" y="17" width="14" height="10" rx="3" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/><rect x="31" y="17" width="14" height="10" rx="3" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/><rect x="50" y="17" width="22" height="10" rx="3" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/><circle cx="22" cy="43" r="7" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/><circle cx="62" cy="43" r="7" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/></symbol>
+</svg>
+
+<nav>
+<a href="#home">首頁</a><a href="#ride">班次</a><a href="#plan">行程</a><a href="#lists">清單</a><a href="#stay">住宿</a>
+</nav>
+
+<main>
+<section id="home">
+<div class="card hero">
+<svg viewBox="0 0 360 210" role="img" aria-label="中山插畫：山丘、故居、客輪與太陽">
+<g class="sun"><circle cx="300" cy="46" r="24" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/></g>
+<g class="drift"><path d="M40 52q0-16 16-16 8-12 24-4 16-2 18 14 12 2 10 14H36q-8-2-4-8z" fill="#fff" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/></g>
+<g class="drift2"><path d="M190 34q0-10 11-10 6-8 17-2 12 0 12 10 8 2 6 10h-44q-6-1-2-8z" fill="#fff" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/></g>
+<path d="M-4 138Q50 70 110 118T230 108T364 100V170H-4Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/>
+<path d="M-4 156Q70 112 150 140T364 130V176H-4Z" fill="#DDEBC9" stroke="#3E3A39" stroke-width="3"/>
+<g transform="translate(150 98)"><path d="M0 40V14h56v26" fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><path d="M-8 16 28-8l36 24z" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round"/><path d="M20 40V28q8-10 16 0v12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3"/><rect x="6" y="20" width="9" height="9" rx="2" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/><rect x="41" y="20" width="9" height="9" rx="2" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/></g>
+<g transform="translate(46 112)"><rect x="9" y="22" width="8" height="22" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/><circle cx="13" cy="16" r="16" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3"/></g>
+<g transform="translate(300 118)"><rect x="9" y="22" width="8" height="22" fill="#F2A497" stroke="#3E3A39" stroke-width="3"/><circle cx="13" cy="16" r="14" fill="#F6D27A" stroke="#3E3A39" stroke-width="3"/></g>
+<path d="M-4 176H364V214H-4Z" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3"/>
+<path d="M14 192q10-8 20 0t20 0 20 0 20 0 20 0 20 0 20 0 20 0 20 0 20 0 20 0 20 0 20 0 20 0" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round"/>
+<g class="bob"><use href="#ferry" x="130" y="150" width="96" height="62"/></g>
+</svg>
+<div class="t">
+<h1>中山如此多FUN</h1>
+<p class="sub" id="range"></p>
+<div class="count" id="count"></div>
+</div>
+</div>
+</section>
+
+<section id="ride">
+<h2>交通班次</h2>
+<div class="card trip" style="background:#E6F2F8"><svg><use href="#ferry"/></svg><div><span class="tag">去程 · 船</span><p class="big">尖沙咀 → 中山港</p><div class="row" id="out"></div></div></div>
+<div class="card trip" style="background:#EEF6E7"><svg><use href="#bus"/></svg><div><span class="tag">回程 · 直通巴</span><p class="big">中山 → 香港</p><div class="row" id="back"></div></div></div>
+</section>
+
+<section id="plan">
+<h2>每日行程</h2>
+<div class="tabs" id="tabs" role="tablist"></div>
+<div class="dayt" id="dayt"></div>
+<ol class="tl" id="tl"></ol>
+<p class="foot">※ 景點與餐廳為範例安排，請按實際計劃修改</p>
+</section>
+
+<section id="lists">
+<h2>清單</h2>
+<div class="g">
+<div class="card" style="background:#FFF3F0"><h3 style="margin:0">待辦事項</h3><p class="prog" data-p="todo"></p><ul class="cl" id="todo"></ul></div>
+<div class="card" style="background:#FFF9E6"><h3 style="margin:0">出發前清單</h3><p class="prog" data-p="pre"></p><ul class="cl" id="pre"></ul></div>
+<div class="card" style="background:#EEF6E7"><h3 style="margin:0">行李清單</h3><p class="prog" data-p="bag"></p><ul class="cl" id="bag"></ul></div>
+</div>
+</section>
+
+<section id="stay">
+<h2>住宿資訊</h2>
+<div class="card hotel" style="background:#E6F2F8">
+<dl><dt>酒店</dt><dd>（待填寫）</dd><dt>地址</dt><dd>（待填寫）</dd><dt>入住</dt><dd id="ci"></dd><dt>退房</dt><dd id="co"></dd><dt>訂單號</dt><dd>（待填寫）</dd></dl>
+</div>
+</section>
+</main>
+
+<script>
+// ===== 可修改的資料 =====
+var DEP='2026-12-25', RET='2026-12-27';
+var OUT='08:00', BACK='16:55';
+var DAYS=[
+{t:'抵達與老城散步',it:[
+['08:00','尖沙咀中國客運碼頭開船','出發！記得提早到碼頭取票','船',0],
+['09:30','抵達中山港','過關後轉乘接駁往市區','巴士',0],
+['11:00','酒店寄存行李','','的士',0],
+['12:30','石岐乳鴿午餐','中山招牌美食，外皮酥脆','步行',1],
+['15:00','孫文步行街','騎樓老街，拍照買零食','步行',1],
+['19:00','夜市宵夜','','步行',0]]},
+{t:'孫中山故里',it:[
+['09:30','前往翠亨村','','的士',0],
+['10:30','孫中山故居紀念館','中山必去地標','步行',1],
+['13:00','翠亨村午餐','','步行',0],
+['15:30','岐江公園','舊船廠改建的公園，適合散步','巴士',1],
+['19:00','晚餐 + 足底按摩','','的士',0]]},
+{t:'購物與返港',it:[
+['10:00','酒店退房','','步行',0],
+['11:00','早茶 / 手信採購','','的士',0],
+['15:30','到達完美金鷹廣場','預留時間排隊','的士',0],
+['16:55','永東直通巴返香港','準時上車','巴士',1]]}
+];
+var TODO=['預訂酒店','購買船票','訂回程直通巴','查好景點開放時間'];
+var PRE=['回鄉證 / 護照有效','手機設定支付寶或微信支付','換部分人民幣現金','開通漫遊或買 eSIM','下載離線地圖','確認酒店訂單'];
+var BAG=['回鄉證 / 護照','手機與充電線','行動電源','外套（冬季偏涼）','雨傘','常備藥品','環保袋','舒適步行鞋'];
+// =========================
+function $(i){return document.getElementById(i)}
+function d(s){var a=s.split('-');return new Date(+a[0],a[1]-1,+a[2])}
+var W=['日','一','二','三','四','五','六'];
+function fmt(x){return x.getFullYear()+'/'+(x.getMonth()+1)+'/'+x.getDate()+'（'+W[x.getDay()]+'）'}
+var dd=d(DEP),rr=d(RET);
+$('range').textContent=fmt(dd)+' – '+fmt(rr);
+$('out').innerHTML=fmt(dd)+' '+OUT+'<br>尖沙咀香港中國客運碼頭 → 中山港';
+$('back').innerHTML=fmt(rr)+' '+BACK+'<br>中山完美金鷹廣場・永東直通巴';
+$('ci').textContent=fmt(dd);$('co').textContent=fmt(rr);
+var now=new Date(),td=new Date(now.getFullYear(),now.getMonth(),now.getDate()),n=Math.round((dd-td)/864e5);
+$('count').innerHTML=n>0?'出發倒數 <b>'+n+'</b> 天':(n===0?'<b>今天出發！</b>':'旅程進行中 / 已出發');
+var cur=0;
+function show(k){
+ cur=k;
+ var t=$('tabs');t.innerHTML='';
+ DAYS.forEach(function(_,i){
+  var x=new Date(dd.getTime());x.setDate(x.getDate()+i);
+  var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');
+  b.className=i===k?'on':'';b.setAttribute('aria-selected',i===k);
+  b.innerHTML='Day '+(i+1)+'<small>'+(x.getMonth()+1)+'/'+x.getDate()+'（'+W[x.getDay()]+'）</small>';
+  b.onclick=function(){show(i)};t.appendChild(b);
+ });
+ $('dayt').textContent='Day '+(k+1)+'・'+DAYS[k].t;
+ var o='';
+ DAYS[k].it.forEach(function(e,i){
+  o+='<li class="it'+(e[4]?' must':'')+'" style="--i:'+i+'"><div class="card">'+(e[4]?'<span class="must-b">必去</span>':'')+'<span class="time">'+e[0]+'</span><h3>'+e[1]+'</h3>'+(e[2]?'<p>'+e[2]+'</p>':'')+'<p><span class="tg '+e[3]+'">'+e[3]+'</span></p></div></li>';
+ });
+ $('tl').innerHTML=o;
+}
+show(0);
+function list(id,arr){
+ var ul=$(id);
+ arr.forEach(function(s,i){
+  var key='zs-'+id+i,on=false;
+  try{on=localStorage.getItem(key)==='1'}catch(e){}
+  var li=document.createElement('li');
+  li.innerHTML='<label><input type="checkbox"><span>'+s+'</span></label>';
+  var c=li.querySelector('input');c.checked=on;
+  c.onchange=function(){try{localStorage.setItem(key,c.checked?'1':'0')}catch(e){}prog()};
+  ul.appendChild(li);
+ });
+}
+function prog(){
+ ['todo','pre','bag'].forEach(function(id){
+  var a=document.querySelectorAll('#'+id+' input'),k=0;
+  a.forEach(function(x){if(x.checked)k++});
+  document.querySelector('[data-p='+id+']').textContent='已完成 '+k+' / '+a.length;
+ });
+}
+list('todo',TODO);list('pre',PRE);list('bag',BAG);prog();
+</script>
+</body>
+</html>
